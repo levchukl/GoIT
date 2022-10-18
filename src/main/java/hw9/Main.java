@@ -2,7 +2,7 @@ package hw9;
 
 public class Main {
     public static void main(String[] args) {
-        MyHashMap<Integer, String> list = new MyHashMap();
+        MyHashMap<Integer, String> list = new MyHashMap<>();
 
         list.put(0, "0");
         list.put(25, "25");

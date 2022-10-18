@@ -1,10 +1,8 @@
 package hw9;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.StringJoiner;
 
-public class MyArrayList <T>{
+public class MyArrayList<T> {
 
     private static final int INIT_SIZE = 10;
     private Object[]data;
@@ -17,6 +15,7 @@ public class MyArrayList <T>{
     private void resize(){
         Object[] newData = new Object[index * 2];
         System.arraycopy(data, 0, newData, 0, data.length);
+        data = newData;
     }
 
     public void add(T item){
@@ -52,7 +51,10 @@ public class MyArrayList <T>{
             Object temp = data[i];
             data[i] = null;
             Object[] newData = new Object[data.length];
-            System.arraycopy(data, i+1, data, i, index -i -1);
+            System.arraycopy(data, i + 1, data, i, index -i - 1);
+            data[index - 1] = null;
+            index--;
+            System.out.println(temp + " successful deleted");
         }
     }
     @Override

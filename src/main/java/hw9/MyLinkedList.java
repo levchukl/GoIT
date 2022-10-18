@@ -1,10 +1,9 @@
 package hw9;
 
-import org.w3c.dom.Node;
 
 import java.util.NoSuchElementException;
 
-public class MyLinkedList <T>{
+public class MyLinkedList<T> {
     private int size = 0;
     Node header = new Node(null, null, null);
 

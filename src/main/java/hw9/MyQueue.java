@@ -2,7 +2,7 @@ package hw9;
 
 import java.util.StringJoiner;
 
-public class MyQueue <T>{
+public class MyQueue<T>{
     private static final int INIT_SIZE = 10;
     private Object[] data;
     private int index;
@@ -13,6 +13,7 @@ public class MyQueue <T>{
     private void resize(){
         Object[] newData = new Object[index * 2];
         System.arraycopy(data, 0, newData, 0, data.length);
+        data = newData;
     }
     public void add(T item){
         if (index == data.length){
@@ -32,6 +33,8 @@ public class MyQueue <T>{
             data[i] = null;
             Object[] newData = new Object[data.length];
             System.arraycopy(data, i + 1, data, i, index - i -1);
+            data[index-1] = null;
+            index--;
         }
     }
     public void clear(){

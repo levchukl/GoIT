@@ -1,6 +1,5 @@
 package hw9;
 
-import org.w3c.dom.Node;
 
 import java.util.Objects;
 
@@ -45,7 +44,7 @@ public class MyHashMap <K, V>{
                     temp = temp.next;
                 }
                 temp.next = newElement;
-                size--;
+                size++;
             }
         }
     }
@@ -62,6 +61,10 @@ public class MyHashMap <K, V>{
                     if (temp.next.equals(newElement)){
                         res = temp.next.getValue();
                     }
+                    temp = temp.next;
+                }
+                if (temp.equals(newElement)){
+                    res = temp.getValue();
                 }
             }
         }
