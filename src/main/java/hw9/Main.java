@@ -6,6 +6,7 @@ public class Main {
 
         list.put(0, "0");
         list.put(25, "25");
+        list.put(101, "101");
 
         System.out.println(list.get(0));
         list.put(5, "35");
@@ -13,5 +14,7 @@ public class Main {
         list.remove(0);
 
         System.out.println(list.get(0));
+        System.out.println(list.get(101));
+
     }
 }
